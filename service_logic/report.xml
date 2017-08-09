@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <report 
+            id="print_service_center_copy"
+            model="work.order"
+            string="Service Center Copy"
+            report_type="qweb-pdf"
+            name="service_logic.service_center_copy"
+            file="service_logic.service_center_copy"
+            />
+        <report 
+            id="print_job_sheet_customer_copy"
+            model="work.order"
+            string="Job Sheet Customer Copy"
+            report_type="qweb-pdf"
+            name="service_logic.job_sheet_customer_copy"
+            file="service_logic.job_sheet_customer_copy"
+            />
+        <report 
+            id="print_delivery_challan"
+            model="stock.picking"
+            string="Delivery Challan"
+            report_type="qweb-pdf"
+            name="service_logic.delivery_challan_copy"
+            file="service_logic.delivery_challan_copy"
+            />
+    </data>
+</odoo>

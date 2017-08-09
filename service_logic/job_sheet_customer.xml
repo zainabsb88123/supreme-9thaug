@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<template id="job_sheet_customer_copy">
+<xpath expr="//t[@t-call='report.external_layout']" position="replace">
+<t t-call="service_logic.invoice_external_layout_job_sheet">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <div class="page">
+                <table class = "table-condensed" style="border-right:1px solid black;border-collapse: collapse; width:100%; height:100%; table-layout:fixed; border:1px solid black;page-break-inside: avoid;">
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            <p style="line-height:0.5;"><h5>
+                                <b>Service Job Sheet</b>
+                                <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>Service
+                            </h5>Center Copy</p>
+                        </td>
+                        <td style="line-height:0.5;">
+                            <h4>
+                                <strong>
+                                    <center>Job No.<span t-field="o.job_no"/></center>
+                                </strong>
+                            </h4>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            <strong>Supreme Audiotronic Pvt Ltd</strong>
+                        </td>
+                        <td style="line-height:0.5;">
+                            Received Date:<![CDATA[&nbsp;]]><span t-field ="o.rec_date"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            A-37, Second Floor,Naraina Industrial Area
+                        </td>
+                        <td style="line-height:0.5;">
+                            Purchased Date:<![CDATA[&nbsp;]]><span t-field ="o.purschase_date"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            Phase-2, New Delhi-110028
+                        </td>
+                        <td style="line-height:0.5;">
+                            Send To Supreme ASC Date:<![CDATA[&nbsp;]]><span t-field ="o.send_to_supreme_asc_date"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            Mobile No.- 9810907333
+                        </td>
+                        <td style="line-height:0.5;">
+                            Supreme Receive from ASC Date:<![CDATA[&nbsp;]]><span t-field ="o.supreme_receive_from_asc_date"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            
+                        </td>
+                        <td style="line-height:0.5;">
+                            ASC Job No:<![CDATA[&nbsp;]]><span t-field ="o.job_no"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            Name:<![CDATA[&nbsp;]]><span t-field ="o.name"/>
+                        </td>
+                        <td style="line-height:0.5;">                            
+                            Product:<![CDATA[&nbsp;]]><span t-field ="o.product_ids.name"/>                        
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            Address:<![CDATA[&nbsp;]]><span t-field="o.address"/>,
+                        </td>
+                        <td style="line-height:0.5;">                            
+                            Brand:<![CDATA[&nbsp;]]><span t-field ="o.brand"/>                        
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;]]><span t-field="o.street2"/>,
+                        </td>
+                        <td style="line-height:0.5;">                            
+                            Model No:<![CDATA[&nbsp;]]><span t-field ="o.model_no"/>                       
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;]]><span t-field="o.city"/>,<![CDATA[&nbsp;]]>
+                            <span t-field="o.state_ids"/>,<![CDATA[&nbsp;]]><span t-field="o.zip"/>
+                        </td>
+                        <td style="line-height:0.5;">                            
+                            Serial No:<![CDATA[&nbsp;]]><span t-field ="o.serial_no"/>                       
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            <p >E-Mail Id:<![CDATA[&nbsp;]]><span t-field ="o.email"/><br/>
+                            Mobile:<![CDATA[&nbsp;]]><span t-field ="o.mobile"/></p>
+                        </td>
+                        <td style="line-height:0.5;">                             
+                            Warranty Status:<![CDATA[&nbsp;]]><span t-field ="o.warranty_date"/>                       
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            Service Required/Symptoms(Customers)<br/>
+                            <span t-field ="o.service_required"/>
+                        </td>
+                        <td >
+                            <p>Condition of set:<br/>
+                            Surface of Packing:<![CDATA[&nbsp;]]><span t-field ="o.surface_of_packing"/><br/>
+                            Surface of Set:<![CDATA[&nbsp;]]><span t-field ="o.surface_of_set"/><br/>
+                            Accessory:<![CDATA[&nbsp;]]>
+                            <t t-set="i" t-value="0"/>
+                                <t t-foreach="o.accessories" t-as="l">
+                                    <t t-if="i &lt;= 0">
+                                    <span t-esc ="l.name"/>
+                                </t>                            
+                                </t>
+                                <br/>
+                            Others:<![CDATA[&nbsp;]]><span t-field ="o.others"/></p>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td colspan="2">
+                            <strong>IMPORTANT NOTICE:</strong>
+                    Your product shall, in the event of your deposite at the same of our service
+                        center, be collected at our service center with in twelve weeks(12) from
+                        the date of notification of the completion of repair/service or from the
+                        date on which instructions were given to us not to proceed with repair/service,
+                        falling which be shall be at liberty to deal with and or otherwise dispose
+                        of the same at our absolute discretion without any liability to you.</td></tr>
+                        <tr>
+                            <td colspan="2">
+                        <strong>TERMS AND CONDITION</strong>                        
+                        
+                            1. The valid warranty caed during stamped by the authorised dealer
+                            together with the original purchase recipt must be reduced when
+                            registering your product for for repair/service underwarranty.
+                            Repair/service charges for your products without the valid warranty
+                            card duly stamped and the original purchase reciepts shall be imposed
+                            accordingly. </td></tr>
+                            <tr>
+                                <td colspan="2">
+                                2. We shall be at liberty not to acaept your products for
+                            repair/service and or not o undertake or proceed with any
+                            repair/service of your product in the event that the same has in our
+                            opinion been tampered with(including the alteration/defacing/removal
+                            of serial numbers),altered modified and or otherwise have been
+                            repaired by unauthorised parties and onwhich may contradictand or be
+                                    inconsistentwith our services polices.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    3. (a) An administrative/service charge in accordance with our
+                            standard cost(exclusive of the aplicable taxes which shall be solely
+                            borne by you) shall be imposed in the event that the reapir/service is
+                            not proceeded with after quotation of the estimated repair/service
+                                charges. </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">   
+                                    (b) An additional transport charge  in accordance with our standard
+                            costs(exclusive of the applicable taxes which shall be solely borne by
+                            you) shall be imposed in the event of outdoor/homeservice attendance. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">    
+                                    © We shall be at liberty to impose charges , including normal
+                            repair/service and transport charges and or any other reasonable
+                            charge, in the event of our attendances for the puroses of
+                                    demonstration,installation aqd or othet services.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                4. (a) We may in the event of outdoor /home service attendance, be
+                            required to undertake and complete the repair/service of your product
+                            at our service centre due to the unavailablity of particular service
+                                    parts and or for any other reason. </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">    (b) We shall not be standing the above not be liable in any manner
+                            however in the event of any inability/delay on our part to undertake
+                            and or complete the repair/service by reason of the non-availabilty of
+                            parts, non-conformity of your product to specification due to tampering,
+                            unauthorised modification and or by any other reason beyond our reasonable
+                            control.
+                                </td>
+                            </tr>
+                        <tr>
+                                <td colspan="2">
+                            5. Your product shall in the event of youe deposite of the same at our
+                            service centre, be returned to you only on the presentation of this
+                            tax invoice and or proof of your ownership.
+                                </td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">
+                            6. All charges for repair/service shall be paid in full on or before
+                            the completion of reapir/service and or at the collection of your
+                            product at our service center.
+                                </td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">
+                            7. Your product shall in the event of your deposite of the same at our
+                            service center, be collected at our service centre within twelve(12)
+                            weeks form the date of notification of the complition of reaoir/service
+                            or from the date on which instructions were given to us not to proceed
+                            with repair/service, failing which be shall be at liberty to deal with
+                            and or otherwise dispose of the same at our absolute discretion without
+                            any liability to you. 
+                                </td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">
+                            8. your product shall be warranted against identical and or direct 
+                            consequential defects for a continouous period of twelve(12) weeks
+                            from the date of completion of cahrgeable reapir/service. There 
+                            shall be no further extension for warranty for subsequent 
+                            repair/service undertaken during the said period. The said warranty
+                            sahll not include service parts relacements which shall be charged 
+                            accordingly.
+                                </td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">
+                            9. We shall be at liberty to revoke and or withdraw any warranty in 
+                            the event that your product has in our reasonable opinion been used 
+                            in a negligent/reckless  manner, misused and or otherwise used in a
+                            manner contrary to and or inconsistent with our operating 
+                            instructions
+                                </td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">
+                            10. You Shall carry out the necessary checks to your product at the
+                            time of collection by/ redelivery to you and raise the necessary 
+                            claims (if any) without further dealy.
+                                </td>
+                        </tr>
+                        <tr>
+                                <td colspan="2">
+                            11. The duration of repair/service of your product may be extended 
+                            due to the unavailabilty of the service parts and ordering lead 
+                            time without any liabilty to you.
+                                </td>
+                        </tr>
+                        <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                                <td colspan="2">
+                            12. The term and condition of the service and the provision of 
+                            repair/services shall be governed by the laws of Republic of "India".
+                                </td>                        
+                    </tr>                    
+                    
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td colspan="2">
+                            <p>Customer Comment</p>
+                        <span t-field ="o.customer_comment"/><br/>
+                        <br/>
+                        <p style="line-height:0.5;font-size:12px;text-align:right">We Confirm That the repair/service had been completed to</p>
+                        <p style="line-height:0.5;text-align:right">CUSTOMER SIGNATURE/DATE</p>
+                        </td>
+                        
+                    </tr>
+                </table>
+            </div>           
+        </t>
+    </t>
+</t>
+</xpath>
+</template>
+<template id="print_report_job_sheet_customer">
+    <!--<t t-call="report.html_container">-->
+        <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'service_logic.job_sheet_customer_copy')"/>
+        </t>
+    <!--</t>-->
+</template>
+</data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+       <record id="module_category_work_order" model="ir.module.category">
+            <field name="name">Work Order</field>
+            <field name="sequence">15</field>
+        </record>
+        
+        <record id="group_work_order_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_work_order"/>
+        </record>
+         <record model="ir.module.category" id="module_category_service_backend_operation">
+            <field name="name">Button Visible</field>
+            <field name="sequence">12</field>
+        </record>
+
+        <record model="res.groups" id="group_service_backend_operation">
+            <field name="name"> Operation</field>
+            <field name="category_id" ref="module_category_service_backend_operation"/>
+        </record>
+	 <record model="ir.module.category" id="module_category_user_receiptionist">
+            <field name="name">Button Visible Receiptionist</field>
+            <field name="sequence">12</field>
+        </record>
+
+        <record model="res.groups" id="group_user_receiptionist">
+            <field name="name">Receiptionist </field>
+            <field name="category_id" ref="module_category_user_receiptionist"/>
+        </record>
+
+	<record model="ir.module.category" id="base.module_category_purchase_management">
+            <field name="name">Spare Requisition</field>
+            <field name="description">Helps you manage your purchase-related processes such as requests for quotations, supplier bills, etc...</field>
+            <field name="sequence">8</field>
+        </record>
+	 <record id="group_hide_menus_invoicing" model="res.groups">
+            <field name="name">Restricted Menus Group</field>
+            <field name="comment">Restricted Menus Group</field>
+        </record>
+        <record model="ir.ui.menu" id="sale.menu_sale_invoicing">
+            <field name="groups_id" eval="[(6, 0, [ref('group_hide_menus_invoicing')])]"/>
+        </record>
+
+	 </data>
+
+</odoo>

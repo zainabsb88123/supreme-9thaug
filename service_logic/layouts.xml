@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <template id="invoice_external_layout_job_sheet">
+    <!-- Multicompany -->
+<!--        <t t-if="o and 'company_id' in o">
+        <t t-set="company" t-value="o.company_id"></t>
+    </t>
+    <t t-if="not o or not 'company_id' in o">
+        <t t-set="company" t-value="res_company"></t>
+    </t>-->
+    <t t-raw="0" />
+</template>
+
+<template id="invoice_external_layout">    
+    <t t-raw="0" />
+    <t t-call="service_logic.external_custom_footer_layout"/>
+</template>
+
+<template id="external_custom_footer_layout">
+    <div class="footer">
+    <p style="text-align:right">We Confirm That the repair/service had been completed to<br/>
+    CUSTOMER SIGNATURE/DATE</p>
+    </div>
+</template>
+</data>
+</odoo>

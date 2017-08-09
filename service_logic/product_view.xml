@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_product_template_inherit_new" model="ir.ui.view">
+            <field name="name">view.product.template.inherit.new</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='barcode']" position="after">
+                    <field name="brand_ids"/>                   
+                </xpath>
+                <xpath expr="//field[@name='list_price']" position="after">                   
+                    <field name="model_ids"/>
+                    <field name="serial_no"/>
+                    <field name="chassis_no"/>
+                </xpath>
+                 <xpath expr="//page[@name='general_information']" position="after">
+                        <page string="Product Details" name = "product_details">
+                            <group col="4">
+                                <field name="twelve_line_up"/>
+                                <field name="thirteen_line_up"/>
+                                <field name="fourteen_line_up"/>
+                                <field name="fifteen_line_up"/>
+                                <field name="sixteen_line_up"/>
+                                <field name="seventeen_line_up"/>
+                                <field name="pick_up_unit"/>
+                                <field name="core_unit"/>
+                                <field name="amp_ic"/>
+                                <field name="micom_ic"/>
+                                <field name="regulator_ic"/>
+                                <field name="tuner_amp_unit"/>
+                                <field name="bt_module"/>
+                                <field name="mechanism"/>
+                                <field name="cord_assy"/>
+                                <field name="detach_grill"/>
+                                <field name="monitor_pcb"/>
+                                <field name="touch_panel"/>
+                                <field name="lcd"/>
+                                <field name="keyboard_pcb"/>
+                                <field name="if_unit"/>
+                                <field name="dual_core"/>
+                                <field name="sensor_unit"/>
+                                <field name="sd_card"/>
+                                <field name="part_name"/>
+                                <field name="part_no"/>
+                            </group>
+                        </page>
+                 </xpath>
+                 <xpath expr="//page[@name='product_details']" position="after">
+                     <page string="Parts" name="parts">
+                         <field name="part_ids">
+                             <tree editable="bottom">                                    
+                                 <field name="product_part"/>
+                                 <field name="description"/>
+                                 <field name="quantity" />                                 
+                             </tree>
+                         </field>
+                     </page>
+                 </xpath>
+                  <xpath expr="//page[@name='parts']" position="after">
+                     <page string="Accessories" name="parts">
+                         <field name="accessories_ids">
+                             <tree editable="bottom">                                    
+                                 <field name="product_accessories"/>
+                                 <field name="description"/>
+                                 <field name="quantity" />                                 
+                             </tree>
+                         </field>
+                     </page>
+                 </xpath>
+                
+
+            </field>
+        </record>
+         <record id="view_product_brand_tree" model="ir.ui.view">
+            <field name="name">view.product.brand.tree</field>
+            <field name="model">product.brand</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="product_ids"/>                  
+                </tree>
+            </field>
+        </record>
+         <record id="view_product_brand_form" model="ir.ui.view">
+            <field name="name">view.product.brand.form</field>
+            <field name="model">product.brand</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                        <field name="name"/>
+                        <field name="product_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.actions.act_window" id="action_product_brand_create">
+            <field name="name">Product Brand</field>
+            <field name="res_model">product.brand</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_product_brand_tree"></field>            
+        </record>
+        <record id="view_product_model_tree" model="ir.ui.view">
+            <field name="name">view.product.model.tree</field>
+            <field name="model">product.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="brand_ids"/>                                       
+                </tree>
+            </field>
+        </record>
+         <record id="view_product_model_form" model="ir.ui.view">
+            <field name="name">view.product.model.form</field>
+            <field name="model">product.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                        <field name="name"/>
+                        <field name="brand_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.actions.act_window" id="action_product_model_create">
+            <field name="name">Product Model</field>
+            <field name="res_model">product.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_product_model_tree"></field>            
+        </record>
+        
+        <menuitem id="menu_product_brand" name="Product Brand" parent="sale.prod_config_main" action="action_product_brand_create"/>
+        <menuitem id="menu_product_model" name="Product Model" parent="sale.prod_config_main" action="action_product_model_create"/>        
+       
+    </data>
+</odoo>

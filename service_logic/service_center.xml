@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<template id="service_center_copy">
+<xpath expr="//t[@t-call='report.external_layout']" position="replace">
+<t t-call="service_logic.invoice_external_layout_job_sheet">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <div class="page">
+                <table class = "table-condensed" style="border-right:1px solid black;border-collapse: collapse; width:100%; height:100%; table-layout:fixed; border:1px solid black;page-break-inside: avoid;">
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            <p style="line-height:0.5;"><h5>
+                                <b>Service Job Sheet</b>
+                                <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>Service
+                            </h5>Center Copy</p>
+                        </td>
+                        <td style="line-height:0.5;">
+                            <h4>
+                                <strong>
+                                    <center>Job No.<span t-field="o.job_no"/></center>
+                                </strong>
+                            </h4>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            <strong>Supreme Audiotronic Pvt Ltd</strong>
+                        </td>
+                        <td style="line-height:0.5;">
+                            Received Date:<![CDATA[&nbsp;]]><span t-field ="o.rec_date"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            A-37, Second Floor,Naraina Industrial Area
+                        </td>
+                        <td style="line-height:0.5;">
+                            Purchased Date:<![CDATA[&nbsp;]]><span t-field ="o.purschase_date"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            Phase-2, New Delhi-110028
+                        </td>
+                        <td style="line-height:0.5;">
+                            Send To Supreme ASC Date:<![CDATA[&nbsp;]]><span t-field ="o.send_to_supreme_asc_date"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            Mobile No.- 9810907333
+                        </td>
+                        <td style="line-height:0.5;">
+                            Supreme Receive from ASC Date:<![CDATA[&nbsp;]]><span t-field ="o.supreme_receive_from_asc_date"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            
+                        </td>
+                        <td style="line-height:0.5;">
+                            ASC Job No:<![CDATA[&nbsp;]]><span t-field ="o.job_no"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            Name:<![CDATA[&nbsp;]]><span t-field ="o.name"/>
+                        </td>
+                        <td style="line-height:0.5;">                            
+                            Product:<![CDATA[&nbsp;]]><span t-field ="o.product_ids.name"/>                        
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            Address:<![CDATA[&nbsp;]]><span t-field="o.address"/>,
+                        </td>
+                        <td style="line-height:0.5;">                            
+                            Brand:<![CDATA[&nbsp;]]><span t-field ="o.brand"/>                        
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;]]><span t-field="o.street2"/>,
+                        </td>
+                        <td style="line-height:0.5;">                            
+                            Model No:<![CDATA[&nbsp;]]><span t-field ="o.model_no"/>                       
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="line-height:0.5;border-right:1px solid black;">
+                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;]]><span t-field="o.city"/>,<![CDATA[&nbsp;]]>
+                            <span t-field="o.state_ids"/>,<![CDATA[&nbsp;]]><span t-field="o.zip"/>
+                        </td>
+                        <td style="line-height:0.5;">                            
+                            Serial No:<![CDATA[&nbsp;]]><span t-field ="o.serial_no"/>                       
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            <p >E-Mail Id:<![CDATA[&nbsp;]]><span t-field ="o.email"/><br/>
+                            Mobile:<![CDATA[&nbsp;]]><span t-field ="o.mobile"/></p>
+                        </td>
+                        <td>                             
+                            Warranty Status:<![CDATA[&nbsp;]]><span t-field ="o.warranty_date"/>                       
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            Service Required/Symptoms(Customers)<br/>
+                            <span t-field ="o.service_required"/>
+                        </td>
+                        <td >
+                            <p>Condition of set:<br/>
+                            Surface of Packing:<![CDATA[&nbsp;]]><span t-field ="o.surface_of_packing"/><br/>
+                            Surface of Set:<![CDATA[&nbsp;]]><span t-field ="o.surface_of_set"/><br/>
+                            Accessory:<![CDATA[&nbsp;]]>
+                            <t t-set="i" t-value="0"/>
+                                <t t-foreach="o.accessories" t-as="l">
+                                    <t t-if="i &lt;= 0">
+                                    <span t-esc ="l.name"/>
+                                </t>                            
+                                </t>
+                                <br/>
+                            Others:<![CDATA[&nbsp;]]><span t-field ="o.others"/></p>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="border-right:1px solid black;">
+                            Actual Symptoms
+                        </td>
+                        <td style="border-bottom:1px solid black">
+                            Part Replaced<![CDATA[&nbsp;]]><span t-field ="o.check_part"/>
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;">
+                        <td style="border-right:1px solid black;">
+                            <span t-field ="o.actual_symptoms"/>                                                        
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                            <td style="width:10%">Part No.</td>
+                            <td style="width:15%">Part Description</td>                                
+                            <td style="width:10%">Qty</td>                                
+                                </tr> 
+                            <tr t-foreach='o.part_details' t-as='value'>
+                                <td t-esc="value.part_replaced_name.name"/>
+
+                            <td t-esc="value.part_replaced_description"/>
+
+                            <td t-esc="value.part_replaced_qty"/>
+                            </tr>
+                            </table>
+                        </td>
+                    </tr>
+		    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            <p>Repair Description</p>
+                            <span t-field ="o.repair_description"/>
+                        </td>
+                        <td style="border-bottom:1px solid black">
+                            
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td style="border-right:1px solid black;">
+                            <p>Engineer Name<![CDATA[&nbsp;&nbsp;]]><span t-field ="o.engg_name"/><br/>
+                        Repair Date<![CDATA[&nbsp;&nbsp;]]><span t-field ="o.repair_date"/></p>
+                        </td>
+                        <td style="border-right:1px solid black;">                            
+                        </td>
+                    </tr>
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">
+                        <td colspan="2">
+                            <p>Customer Comment</p>
+                        <span t-field ="o.customer_comment"/><br/>
+                        <br/>
+                        <p style="line-height:0.5;font-size:12px;text-align:right">We Confirm That the repair/service had been completed to</p>
+                        <p style="line-height:0.5;text-align:right">CUSTOMER SIGNATURE/DATE</p>
+                        </td>
+                        
+                    </tr>
+                </table>
+                </div>            
+        </t>
+    </t>
+</t>
+</xpath>
+</template>
+<template id="print_report_service_center">
+    <!--<t t-call="report.html_container">-->
+        <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'service_logic.service_center_copy')"/>
+        </t>
+    <!--</t>-->
+</template>
+</data>
+</odoo>

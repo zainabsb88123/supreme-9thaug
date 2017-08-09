@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<template id="delivery_challan_copy">
+<xpath expr="//t[@t-call='report.external_layout']" position="replace">
+<t t-call="service_logic.invoice_external_layout">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <div class="page">                
+                <table class = "table-condensed" style="border-right:1px solid black;border-collapse: collapse; width:100%; height:100%; table-layout:fixed; border:1px solid black;page-break-inside: avoid;">
+                    <tr style="border-right:1px solid black;width:100%;border-bottom:1px solid black">                        
+                        <td colspan="8"><b>Service Delivery Challan</b></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>                                      
+                        <td colspan="4"><b><span t-esc="o.company_id.name"/></b></td>                            
+                    </tr>
+                    <tr style="border-right:1px solid black">
+                        <td style="line-height:0.5" colspan="8"><b><span t-esc="o.company_id.name"/></b></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr style="border-right:1px solid black">
+                        <td style="line-height:0.5" colspan="8">
+                            <span t-esc="o.company_id.street"/>,<span t-esc="o.company_id.street2"/>,
+                            <span t-esc="o.company_id.city"/>,<span t-esc="o.company_id.state_id.name"/>-
+                            <span t-esc="o.company_id.zip"/>
+                        </td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4" style="line-height:0.5;border-top:1px solid black;border-left:1px solid black;">LC/104/076248/1056</td>
+                    </tr>
+                    <tr style="width:100%;border-bottom:1px solid black;border:right:1px solid black">
+                        <td style="line-height:0.5" colspan="8">Tel: <span t-esc="o.company_id.phone"/></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4" style="line-height:0.5;border-left:1px solid black;border-top:1px solid black;">Tin: 07230076248</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid black">
+                        <td colspan="4"><b>Delivery Note No.:</b></td>                            
+                        <td colspan="3"><b><span t-esc="o.name"/></b></td>                        
+                        <td colspan="6"><b>DATE:<span t-esc="o.min_date"/></b></td>
+                        <td colspan="1"></td>                        
+                    </tr>
+                    <tr style="border-bottom:1px solid black"> 
+                        <td colspan="8"><b>Deliver To:</b></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td style="line-height:0.5" colspan="8"><b>KIND Attn:<span t-esc="o.partner_id.name"/></b></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td style="line-height:0.5" colspan="8"><span t-esc="o.partner_id.street"/><span t-esc="o.partner_id.street2"/></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td style="line-height:0.5" colspan="8"><span t-esc="o.partner_id.city"/><span t-esc="o.partner_id.state_id.name"/>-<span t-esc="o.partner_id.zip"/></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid black">
+                        <td style="line-height:0.5" colspan="8">PH NO.<span t-esc="o.partner_id.mobile"/></td>
+                        <td colspan="1"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid black">
+                        <td colspan="8"></td>
+                        <td colspan="1"></td>
+                        <td style="border-right:1px solid black" colspan="1"></td>
+                        <td colspan="4"><b>REMARKS/VALUE</b></td>
+                    </tr>                    
+                    <tr>
+                        <td style="border-bottom:1px solid black;border-right:1px solid black" colspan="5"><center>1</center></td>
+                        <td style="border-right:1px solid black" colspan="4">DEFECTIVE SPARE PARTS FOR THE MONTH OF DEC-16</td>
+                        <td style="border-right:1px solid black" colspan="1"><center>4</center></td>
+                        <td colspan="4"><b>DEFECTIVE SPARES FOR ANALYSIS PURPOSE</b></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid black;">
+                        <td style="border-right:1px solid black" colspan="5"></td>
+                        <td style="border-right:1px solid black" colspan="4">(LIST ENCLOSED)</td>
+                        <td style="border-right:1px solid black" colspan="1"></td>
+                        <td colspan="4"><b>NO COMMERCIAL VALUE DECLARED VALUE INR 700/</b></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid black;">
+                        <td style="border-right:1px solid black" colspan="5"></td>
+                        <td style="border-right:1px solid black" colspan="4"></td>
+                        <td style="border-right:1px solid black" colspan="1">4</td>
+                        <td colspan="4"><b>BOX</b></td>
+                    </tr>                    
+                    <tr>
+                        <td colspan="7">Note: After in warranty Repairs/Replacement</td>
+                        <td style="border-right:1px solid black" colspan="2"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid black;">
+                        <td colspan="7">NOT FOR SALE</td>
+                        <td style="border-right:1px solid black" colspan="2"></td>
+                        <td colspan="1"></td>
+                        <td colspan="4"><center><b>Authorised Signatory</b></center></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid black;">
+                        <td colspan="4"></td>
+                        <td colspan="2"></td>
+                        <td colspan="4"><b>Consigner Copy</b></td>
+                        <td colspan="4"></td>
+                    </tr>
+                </table>
+            </div>           
+        </t>
+    </t>
+</t>
+</xpath>
+</template>
+<template id="print_report_delivery_challan">
+    <!--<t t-call="report.html_container">-->
+        <t t-foreach="doc_ids" t-as="doc_id">
+            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'service_logic.delivery_challan_copy')"/>
+        </t>
+    <!--</t>-->
+</template>
+</data>
+</odoo>
